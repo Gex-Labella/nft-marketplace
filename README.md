@@ -45,32 +45,6 @@ A decentralized NFT marketplace built on the **Base blockchain** with React, Typ
 - **Network:** Base (Ethereum L2)
 - **Web3 Library:** ethers.js 6
 
-## 📁 Project Structure
-
-```
-nft-marketplace/
-├── contracts/              # Solidity smart contracts
-│   ├── contract.sol        # Main NFT marketplace contract
-│   └── Lock.sol            # Example contract
-├── src/
-│   ├── components/         # React components
-│   │   ├── home/           # Homepage components
-│   │   ├── Layout/         # Header, Footer
-│   │   ├── nft/            # NFT-related components
-│   │   └── ui/             # Reusable UI components
-│   ├── pages/              # Page components
-│   ├── lib/                # Utility libraries
-│   ├── shared/             # Shared schemas and types
-│   ├── data/               # Data management
-│   └── App.tsx             # Main application component
-├── ignition/               # Hardhat Ignition deployment scripts
-├── test/                   # Contract tests
-├── types/                  # TypeScript type declarations
-├── public/                 # Static assets
-├── hardhat.config.ts       # Hardhat configuration
-└── package.json            # Dependencies and scripts
-```
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -79,42 +53,6 @@ nft-marketplace/
 - Yarn or npm
 - MetaMask or another Web3 wallet
 - Base Sepolia testnet ETH (for testing)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/nft-marketplace.git
-   cd nft-marketplace
-   ```
-
-2. **Install dependencies**
-   ```bash
-   yarn install
-   # or
-   npm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   ```
-   Configure your environment variables:
-   ```env
-   REACT_APP_CONTRACT_ADDRESS=your_deployed_contract_address
-   REACT_APP_ALCHEMY_API_KEY=your_alchemy_api_key
-   PRIVATE_KEY=your_wallet_private_key
-   ```
-
-4. **Start the development server**
-   ```bash
-   yarn dev
-   # or
-   npm run dev
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📜 Smart Contract Deployment
 
