@@ -1,70 +1,209 @@
-# Getting Started with Create React App
+# 🎨 Base NFT Marketplace
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A decentralized NFT marketplace built on the **Base blockchain** with React, TypeScript, and Solidity smart contracts. Create, buy, sell, and auction NFTs with built-in royalties and platform fees.
 
-## Available Scripts
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Solidity](https://img.shields.io/badge/Solidity-^0.8.20-363636?logo=solidity)
+![React](https://img.shields.io/badge/React-19.1.0-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript)
+![Base](https://img.shields.io/badge/Base-Blockchain-0052FF?logo=coinbase)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `yarn start`
+### Smart Contract Features
+- **NFT Minting** - Create ERC-721 NFTs with custom metadata and royalties
+- **Fixed Price Sales** - List and sell NFTs at a fixed price
+- **Auctions** - Create time-limited auctions with bidding functionality
+- **Royalties (ERC-2981)** - Automatic royalty payments to original creators
+- **Platform Fees** - Configurable marketplace fees
+- **Security** - Built with OpenZeppelin contracts and ReentrancyGuard
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend Features
+- **Modern UI** - Clean, responsive design with Tailwind CSS
+- **Wallet Integration** - Connect with MetaMask and other Web3 wallets via ethers.js
+- **Real-time Updates** - React Query for efficient data fetching
+- **Smooth Animations** - Framer Motion for polished user experience
+- **Type Safety** - Full TypeScript support with Zod validation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏗️ Tech Stack
 
-### `yarn test`
+### Frontend
+- **Framework:** React 19 with TypeScript
+- **Styling:** Tailwind CSS 4
+- **Routing:** Wouter
+- **State Management:** React Query (TanStack Query)
+- **Animations:** Framer Motion
+- **Validation:** Zod
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Smart Contracts
+- **Language:** Solidity ^0.8.20
+- **Framework:** Hardhat
+- **Libraries:** OpenZeppelin Contracts 5.x
+- **Standards:** ERC-721, ERC-721Enumerable, ERC-721URIStorage, ERC-2981
 
-### `yarn build`
+### Blockchain
+- **Network:** Base (Ethereum L2)
+- **Web3 Library:** ethers.js 6
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+nft-marketplace/
+├── contracts/              # Solidity smart contracts
+│   ├── contract.sol        # Main NFT marketplace contract
+│   └── Lock.sol            # Example contract
+├── src/
+│   ├── components/         # React components
+│   │   ├── home/           # Homepage components
+│   │   ├── Layout/         # Header, Footer
+│   │   ├── nft/            # NFT-related components
+│   │   └── ui/             # Reusable UI components
+│   ├── pages/              # Page components
+│   ├── lib/                # Utility libraries
+│   ├── shared/             # Shared schemas and types
+│   ├── data/               # Data management
+│   └── App.tsx             # Main application component
+├── ignition/               # Hardhat Ignition deployment scripts
+├── test/                   # Contract tests
+├── types/                  # TypeScript type declarations
+├── public/                 # Static assets
+├── hardhat.config.ts       # Hardhat configuration
+└── package.json            # Dependencies and scripts
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Getting Started
 
-### `yarn eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js 18+
+- Yarn or npm
+- MetaMask or another Web3 wallet
+- Base Sepolia testnet ETH (for testing)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/nft-marketplace.git
+   cd nft-marketplace
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install dependencies**
+   ```bash
+   yarn install
+   # or
+   npm install
+   ```
 
-## Learn More
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   ```
+   Configure your environment variables:
+   ```env
+   REACT_APP_CONTRACT_ADDRESS=your_deployed_contract_address
+   REACT_APP_ALCHEMY_API_KEY=your_alchemy_api_key
+   PRIVATE_KEY=your_wallet_private_key
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Start the development server**
+   ```bash
+   yarn dev
+   # or
+   npm run dev
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-### Code Splitting
+## 📜 Smart Contract Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Compile Contracts
+```bash
+npx hardhat compile
+```
 
-### Analyzing the Bundle Size
+### Run Tests
+```bash
+npx hardhat test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Deploy to Base Sepolia
+```bash
+npx hardhat ignition deploy ./ignition/modules/NFTMarketplace.ts --network base-sepolia
+```
 
-### Making a Progressive Web App
+### Deploy to Base Mainnet
+```bash
+npx hardhat ignition deploy ./ignition/modules/NFTMarketplace.ts --network base-mainnet
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔧 Available Scripts
 
-### Advanced Configuration
+| Command | Description |
+|---------|-------------|
+| `yarn dev` | Start development server |
+| `yarn build` | Build for production |
+| `yarn test` | Run React tests |
+| `npx hardhat compile` | Compile smart contracts |
+| `npx hardhat test` | Run contract tests |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📋 Smart Contract API
 
-### Deployment
+### Core Functions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| Function | Description |
+|----------|-------------|
+| `mintNFT(address owner, string tokenURI, uint96 royaltyFraction)` | Mint a new NFT |
+| `listNFTForSale(uint256 tokenId, uint256 price)` | List NFT for fixed-price sale |
+| `buyNFT(uint256 tokenId)` | Purchase a listed NFT |
+| `startAuction(uint256 tokenId, uint256 startingBid, uint256 duration)` | Start an auction |
+| `placeBid(uint256 tokenId)` | Place a bid on an auction |
+| `endAuction(uint256 tokenId)` | End an auction and transfer NFT |
 
-### `yarn build` fails to minify
+### Events
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `NFTMinted` - Emitted when a new NFT is created
+- `NFTListed` - Emitted when an NFT is listed for sale
+- `NFTSold` - Emitted when an NFT is purchased
+- `AuctionStarted` - Emitted when an auction begins
+- `BidPlaced` - Emitted when a bid is placed
+- `AuctionEnded` - Emitted when an auction concludes
+
+## 🔐 Security
+
+This project implements several security best practices:
+
+- **ReentrancyGuard** - Protection against reentrancy attacks
+- **OpenZeppelin** - Battle-tested contract implementations
+- **Pull-over-push** - Safe pattern for ETH transfers
+- **Access Control** - Owner-only administrative functions
+- **Input Validation** - Comprehensive parameter checks
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [OpenZeppelin](https://openzeppelin.com/) - Smart contract security
+- [Base](https://base.org/) - Layer 2 blockchain
+- [Hardhat](https://hardhat.org/) - Ethereum development environment
+- [React](https://reactjs.org/) - Frontend framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+
+---
+
+<p align="center">
+  Built with ❤️ for the Base ecosystem
+</p>
